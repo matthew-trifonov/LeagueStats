@@ -1,0 +1,28 @@
+
+<div class="mt-5" id="player-stats-container">
+    <h2>Player Statistics</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Win Percentage</th>
+                <th>Games</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for champion, record in sorted_champ_dict %}
+                {% set wins = record.wins %}
+                {% set losses = record.losses %}
+                {% if wins + losses > 5 %}
+                    {% set percentage = (wins / (wins + losses)) * 100 %}
+                    {% set formatted_percentage = "%0.2f" % percentage %}
+                    <tr>
+                        <td>{{ champion }}</td>
+                        <td>{{ formatted_percentage }}%</td>
+                        <td>{{ wins + losses }}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

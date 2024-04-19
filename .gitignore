@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Dependency directories
+.Python
+env/
+venv/
+pip-selfcheck.json
+
+# Environment configuration
+.env
+.flaskenv
+
+# IDEs
+.vscode/
+.idea/
+
+# Editor specific files
+*.swp
+.DS_Store
