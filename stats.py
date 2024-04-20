@@ -64,8 +64,8 @@ def get_matches(start_time, end_time, userId, winrate_criteria, type='ranked', q
         url = f'https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/{userId}/ids{api_key}'
         url += f'&startTime={start_time}&endTime={end_time}&queue={queue}&type={type}&count={count}'
         r = requests.get(url)
+        print(r)
         matches= r.json()  
-        print(url)
         urls = [f'https://americas.api.riotgames.com/lol/match/v5/matches/{item}{api_key}' for item in matches]
         timestamp = get_match_data(urls, userId, winrate_criteria)
         if not timestamp:
