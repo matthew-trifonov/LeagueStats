@@ -10,10 +10,12 @@
             </tr>
         </thead>
         <tbody>
+            {% set totalWins = 0 %}
+            {% set totalGames = 0 %}
             {% for champion, record in sorted_champ_dict %}
                 {% set wins = record.wins %}
                 {% set losses = record.losses %}
-                {% if wins + losses > 5 %}
+                {% if wins + losses > 0 %}
                     {% set percentage = (wins / (wins + losses)) * 100 %}
                     {% set formatted_percentage = "%0.2f" % percentage %}
                     <tr>

@@ -9,10 +9,10 @@ def index():
         name = request.form['name']
         winrate_criteria = request.form['winrate']
         try:
-            sorted_champ_dict = get_stats(name, winrate_criteria)
+            print(name, winrate_criteria)
+            sorted_dict = get_stats(name, winrate_criteria)
         except Exception as e:
             print(f"An error occurred: {e}")
-        print(sorted_champ_dict)
-        return render_template('partials/StatsView.html', sorted_champ_dict = sorted_champ_dict)
+        return render_template('partials/StatsView.html', sorted_champ_dict = sorted_dict)
         
     return render_template('index.html')

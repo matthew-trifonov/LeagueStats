@@ -14,6 +14,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: 'POST',
+            timeout: 600000,
             url: '/',
             data: formData,
             success: function(data) {
